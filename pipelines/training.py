@@ -4,7 +4,7 @@ from sklearn.linear_model import LogisticRegression
 import flytekit.extras.sklearn
 from flytekit import task, workflow
 from data import DataUtil
-from model import RegressionModel
+from model import ClassificationModel
 from helper import Utils
 
 
@@ -25,7 +25,7 @@ def process_data(data: pd.DataFrame) -> pd.DataFrame:
 @task
 def train_model(data: pd.DataFrame, hyperparameters: dict) -> LogisticRegression:
     """Train a model on the wine dataset."""
-    model = RegressionModel.get_LogisticRegression_Model(data, hyperparameters)
+    model = ClassificationModel.get_LogisticRegression_Model(data, hyperparameters)
     return model
 
 
