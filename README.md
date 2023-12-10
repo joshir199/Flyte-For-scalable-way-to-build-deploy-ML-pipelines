@@ -7,6 +7,10 @@ Flyte is a workflow orchestrator that seamlessly unifies data, machine learning,
 Flyte consists of workflow which integrate various steps of ML process. Each workflow consists of small building blocks called tasks.
 Tasks can be one of the steps of ML process like loading data, preprocessing data etc.
 
+Constraints & Properties of Flyte :
+1. Task and Workflow functions should be strongly typed, e.g : input & output data types should be explicitly mentioned in the function.
+2. Task and Workflow functions should always be called using Keyword arguments (kwargs).
+
 *******************************************
 # Project
 In this Project, We are building a simple Logistic Regression solution using proper Flyte workflow technique.
