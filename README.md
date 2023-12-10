@@ -10,6 +10,13 @@ Tasks can be one of the steps of ML process like loading data, preprocessing dat
 Constraints & Properties of Flyte :
 1. Task and Workflow functions should be strongly typed, e.g : input & output data types should be explicitly mentioned in the function.
 2. Task and Workflow functions should always be called using Keyword arguments (kwargs).
+3. Tasks are treated as Containerized Functions which means it runs on its own isolated container in the Flyte cluster as a microservices.
+
+Task as containerized function benefits:
+1. Statelessness : each task is stateless and can be run multiple times without any side effects.
+2. Reproducibility : It can be run multiple times with same inputs and produce same outputs.
+3. Portability: Each task is portable. It can be run on any infrostructure that can run containers.
+4. Heterogeneity: Each task in a workflow can be written in any language.
 
 *******************************************
 # Project
